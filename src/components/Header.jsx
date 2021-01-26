@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 //Styles
 import "../assets/styles/components/Header.scss";
 
@@ -9,7 +9,10 @@ import user_icon from "../assets/static/user-icon.png";
 
 const Header = () => (
   <header className="header">
-    <img className="header__img" src={platzi_video} alt="Platzi Video" />
+    <Link to="/">
+      <img className="header__img" src={platzi_video} alt="Platzi Video" />
+    </Link>
+
     <div className="header__menu">
       <div className="header__menu--profile">
         <img src={user_icon} alt="" />
@@ -20,7 +23,7 @@ const Header = () => (
           <a href="/">Cuenta</a>
         </li>
         <li>
-          <a href="/">Cerrar Sesión</a>
+          <Link to="/login">Iniciar Sesión</Link>
         </li>
       </ul>
     </div>

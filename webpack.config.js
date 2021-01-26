@@ -12,6 +12,7 @@ module.exports = {
     open: true,
     hot: true,
     port: 8080,
+    historyApiFallback: true,
   },
   mode: "development",
   resolve: {
@@ -42,12 +43,12 @@ module.exports = {
         test: /\.(png|gif|jpg)$/,
         use: [
           {
-            'loader': 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'assets/[hash].[ext]'
-            }
-          }
-        ]
+              name: "assets/[hash].[ext]",
+            },
+          },
+        ],
       },
     ],
   },

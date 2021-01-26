@@ -7,8 +7,7 @@
     "build": "webpack --mode production",
     "server": "json-server initialState.json",
     "start-watch": "webpack serve --open --mode development --host 192.168.56.1",
-    "dev":  "start npm run start-watch && start npm run server"
-
+    "dev": "start npm run start-watch && start npm run server"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +20,8 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
