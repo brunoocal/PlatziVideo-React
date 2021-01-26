@@ -9,9 +9,20 @@ import "../assets/styles/components/CarouselItem.scss";
 import play from "../assets/static/play-icon.png";
 import plus from "../assets/static/plus-icon.png";
 import remove from "../assets/static/delete-icon.png";
+import check from "../assets/static/check-icon.png";
 
 const CarouselItem = (props) => {
-  const { cover, title, year, contentRating, duration, id } = props;
+  const {
+    cover,
+    title,
+    year,
+    contentRating,
+    duration,
+    id,
+    inMyList,
+    isInMyList,
+  } = props;
+
   const handleSetFavorite = () => {
     props.setFavorite({
       cover,
@@ -19,7 +30,8 @@ const CarouselItem = (props) => {
       year,
       contentRating,
       duration,
-      id
+      id,
+      isInMyList,
     });
   };
 
@@ -37,18 +49,28 @@ const CarouselItem = (props) => {
             src={play}
             alt="Play Icon"
           />
-          <img
-            className="carousel-item__details--img"
-            src={plus}
-            alt="Plus Icon"
-            onClick={handleSetFavorite}
-          />
-          <img
-            className="carousel-item__details--img"
-            src={remove}
-            alt="Remove Icon"
-            onClick={() => handleDeleteFavorite(id)}
-          />
+
+          {inMyList ? (
+            <img
+              className="carousel-item__details--img"
+              src={remove}
+              alt="Remove Icon"
+              onClick={() => handleDeleteFavorite(id)}
+            />
+          ) : isInMyList ? (
+            <img
+              className="carousel-item__details--img"
+              src={check}
+              alt="Check Icon"
+            />
+          ) : (
+            <img
+              className="carousel-item__details--img"
+              src={plus}
+              alt="Plus Icon"
+              onClick={handleSetFavorite}
+            />
+          )}
         </div>
         <p className="carousel-item__details--title">{title}</p>
         <p className="carousel-item__details--subtitle">{`${year} ${contentRating} ${duration}`}</p>

@@ -8,10 +8,10 @@ import { createStore } from "redux";
 import reducer from "./reducers";
 
 const initialState = {
-  "user": {},
-  "playing": {},
-  "myList": [],
-  "trends": [
+  user: {},
+  playing: {},
+  myList: [],
+  trends: [
     {
       id: 2,
       slug: "tvshow-2",
@@ -24,6 +24,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/99118E/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 3,
@@ -37,6 +38,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/302140/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 4,
@@ -50,6 +52,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/5472FF/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 5,
@@ -63,6 +66,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/B36F20/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 6,
@@ -76,6 +80,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/CCC539/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 7,
@@ -89,9 +94,10 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/FF7A90/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
   ],
-  "originals": [
+  originals: [
     {
       id: 8,
       slug: "tvshow-8",
@@ -104,6 +110,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/306880/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 9,
@@ -117,6 +124,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/604180/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 10,
@@ -130,6 +138,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/FF91BA/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 11,
@@ -143,6 +152,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/45807C/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 12,
@@ -156,6 +166,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/577380/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
     {
       id: 13,
@@ -169,6 +180,7 @@ const initialState = {
       cover: "http://dummyimage.com/800x600.png/5472FF/ffffff",
       description: "Vestibulum ac est lacinia nisi venenatis tristique",
       source: "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
+      isInMyList: false,
     },
   ],
 };
