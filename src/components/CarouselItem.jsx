@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-
+import React from "react";
+import { connect } from "react-redux";
+import { setFavorite } from "../actions";
 //Styles
 import "../assets/styles/components/CarouselItem.scss";
 
@@ -8,7 +9,18 @@ import "../assets/styles/components/CarouselItem.scss";
 import play from "../assets/static/play-icon.png";
 import plus from "../assets/static/plus-icon.png";
 
-const CarouselItem = ({ cover, title, year, contentRating, duration }) => {
+const CarouselItem = (props) => {
+  const { cover, title, year, contentRating, duration } = props;
+  const handleSetFavorite = () => {
+    props.setFavorite({
+      cover,
+      title,
+      year,
+      contentRating,
+      duration,
+    });
+  };
+
   return (
     <div className="carousel-item">
       <img className="carousel-item__img" src={cover} alt={`${title} cover`} />
@@ -23,6 +35,7 @@ const CarouselItem = ({ cover, title, year, contentRating, duration }) => {
             className="carousel-item__details--img"
             src={plus}
             alt="Plus Icon"
+            onClick={handleSetFavorite}
           />
         </div>
         <p className="carousel-item__details--title">{title}</p>
@@ -32,4 +45,8 @@ const CarouselItem = ({ cover, title, year, contentRating, duration }) => {
   );
 };
 
-export default CarouselItem;
+const mapDispatchToProps = {
+  setFavorite,
+};
+
+export default connect(null, mapDispatchToProps)(CarouselItem);
