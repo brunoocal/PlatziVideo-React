@@ -31,9 +31,6 @@ const reducer = (state, action) => {
           (item) => item.id === action.payload
         );
 
-        console.log(tEdit);
-        console.log(oEdit);
-
         if (tEdit !== undefined) {
           tEdit.isInMyList = false;
         }
@@ -46,6 +43,52 @@ const reducer = (state, action) => {
         ...state,
         myList: state.myList.filter((items) => items.id !== action.payload),
       };
+
+    case "LOGIN_REQUEST":
+      return {
+        ...state,
+        user: action.payload,
+      };
+
+    case "LOGOUT_REQUEST":
+      return {
+        ...state,
+        user: action.payload,
+      };
+
+    case "REGISTER_REQUEST":
+      return {
+        ...state,
+        user: action.payload,
+      };
+
+    case "GET_VIDEO_SOURCE":
+      return {
+        ...state,
+        playing:
+          state.trends.find((item) => item.id === Number(action.payload)) ||
+          state.originals.find((item) => item.id === Number(action.payload)) ||
+          [],
+      };
+
+    case "SEARCH_VIDEO":
+      if (action.payload === "") {
+        return {
+          ...state,
+          search: [],
+        };
+      }
+
+      const all = state.trends.concat(state.originals);
+
+      return {
+        ...state,
+        search:
+          all.filter((items) =>
+            items.title.toLowerCase().includes(action.payload.toLowerCase())
+          ) || [],
+      };
+
     default:
       return state;
   }

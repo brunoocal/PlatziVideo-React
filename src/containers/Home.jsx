@@ -7,6 +7,7 @@ import Search from "../components/Search.jsx";
 import Categories from "../components/Categories.jsx";
 import Carousel from "../components/Carousel.jsx";
 import CarouselItem from "../components/CarouselItem.jsx";
+import Header from "../components/Header";
 import useInitialState from "../hooks/useInitialState.js";
 
 //Styles
@@ -15,6 +16,7 @@ import "../assets/styles/App.scss";
 const Home = ({ myList, trends, originals }) => {
   return (
     <>
+      <Header />
       <Search />
 
       {myList.length > 0 && (
